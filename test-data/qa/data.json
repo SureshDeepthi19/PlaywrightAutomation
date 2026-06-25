@@ -1,0 +1,12 @@
+{
+  "Module1TestData": {
+    "course1": "JavaScript Tutorial",
+    "course2": "Python  Tutorials",
+    "course3": "HTML Full Course"
+  },
+  "qaTestData": {
+    "course1": "JavaScript Tutorial",
+    "course2": "Python  Tutorials",
+    "course3": "HTML Full Course"
+  }
+}
