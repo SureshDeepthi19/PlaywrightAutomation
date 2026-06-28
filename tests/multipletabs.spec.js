@@ -23,3 +23,21 @@
     await page.close();
     
     })
+
+
+    test('mutiple windows', async({browser})=>{
+         const context = await browser.newContext();
+         const page = await context.newPage();
+         await page.goto("https://www.qafox.com/selenium-practice/")
+
+         const[newPage] = await Promise.all([
+        context.waitForEvent("page"),
+        page.getByRole('link',{ name: "Selenium 4 Java Course (2022-23" }).click()
+        
+        ])
+        
+         await newPage.getByPlaceholder("Search").click();
+         await newPage.getByPlaceholder("Search").fill("Bhagavadgitha");
+        await newPage.close();
+
+    })
