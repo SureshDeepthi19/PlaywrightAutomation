@@ -3,7 +3,7 @@
 
  test ('Handle upload files', async ({page})=> {
    await page.goto("https://demoqa.com/upload-download")
-   await page.locator("#uploadFile").setInputFiles("upload_files/Palm.png.jpeg")
+   await page.locator("#uploadFile").setInputFiles("upload_files/tiger.jpg")
 
    
 
