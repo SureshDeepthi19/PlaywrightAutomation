@@ -3,7 +3,7 @@
 
 test ('Handle upload files', async ({page})=> {
    await page.goto("https://demoqa.com/upload-download")
-   page.locator("#uploadFile").setInputFiles("upload_files/tiger.jpg")
+   await page.locator("#uploadFile").setInputFiles("upload_files/tiger.jpg")
 
    const [download] = await Promise.all([
    page.waitForEvent("download"),

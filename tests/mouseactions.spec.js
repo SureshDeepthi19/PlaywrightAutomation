@@ -28,3 +28,28 @@ test("test", async ({ page }) => {
 
   await page.waitForTimeout(5000);
 });
+
+test("mouse actions", async ({ page }) => {
+  await page.goto("https://www.tebra.com/why-tebra/automate-practice");
+  await page.getByText("Products").first().hover();
+  //await page.locator("//*[normalize-space()='Products']").first().hover();
+  await page
+    .locator("[aria-label='Link to Product Tour']")
+    .first()
+    .click({ button: "right" });
+  await page.locator("[aria-label='Link to Product Tour']").first().click();
+  await page.waitForTimeout(3000);
+});
+
+
+test("drag and Drop", async ({ page }) => {
+  await page.goto("https://demoqa.com/droppable");
+  const drag = page.locator("#draggable");
+  const drop = page.locator("#droppable").first();
+  //console.log(await page.locator("#draggable").count());
+  //console.log(await page.locator("#droppable").count());
+  await drag.dragTo(drop);
+  await page.waitForTimeout(3000);
+  await expect(drop).toContainText("Dropped!");
+});
+
